@@ -65,3 +65,8 @@ tidydata<- subdata %>%
   group_by(subject, activity) %>%
   summarise_all(funs(mean))
 write.table(tidydata, "TidyData.txt", row.name=FALSE)
+
+#Make codebook
+#install.packages("dataMaid")
+library(dataMaid)
+makeCodebook(tidydata)
